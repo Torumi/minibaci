@@ -19,4 +19,8 @@ if __name__ == '__main__':
         start = time.time()
         test_result = main.main(a1_, a2_, N_)
         end = time.time()
-        logger.info(f"Filename: {file} Input: {a1_} {a2_} {N_}   Output: {test_result}    Time:{end - start}")
+        time_taken = end - start
+        if time_taken > 0.5:
+            logger.warning(f"Filename: {file} Input: {a1_} {a2_} {N_}   Output: {test_result}    Time:{end - start}")
+        else:
+            logger.info(f"Filename: {file} Input: {a1_} {a2_} {N_}   Output: {test_result}    Time:{end - start}")
